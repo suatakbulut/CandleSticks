@@ -1,20 +1,25 @@
  Efficient Market Hypothesis (EMH) states that an asset reflects all available information about itself. 
-Another way to put the EMH is that it is impossible to predict the future price of an asset without new obtaining new 
-(publicly unavailable) information.There have been multiple papers that are in favor of this hypothesis. 
-However, many people do not believe it, questioning its assumtion. Not believing it, in my opinion, made people 
+Another way to put the EMH is that it is impossible to predict the future price of an asset without obtaining new 
+(publicly unavailable) information. There have been multiple papers that are in favor of this hypothesis. 
+However, many people do not believe it, questioning its assumtions. Not believing it, in my opinion, made people 
 research more about time series data. As one such non-believer, I would like to use the history of candle stick 
 formation of the daily price of a stock to predict whether whether it is a good time for a day-trade. 
-Since this is a really new project of mine, I do not have many (even preliminery) results to show yet though. 
+Since this is a really new project of mine, I do not have many satisfactory results to show yet though (neither 
+in positive nor negative direction). 
 
  Data: In this project, I scraped historical daily Open, Close, High, Low, and Volume data of the top 250 stocks listed 
-in S&P500 from 2015-03-31 to 2020-03-31. 
+in S&P500 from 2015-04-14 to 2020-04-13. 
 For a given observation (one day) I create the following variables:
 	- last four days' candle stick formations, name them candle1, candle2, candle3, and candle4. 
-	- The return of a day trade calculated by assuming that buy price is Open price and sell price is Close price. 
-	- Whether the return from a day trade is above %1, name it isProfit
+	- last four days' Volume, name them Volume1, Volume2, Volume3, and Volume4
+	- Percentage return of a day trade calculated by assuming that buy price is Open and sell price is Close. 
+	- Whether the return from a day trade is profitable, isProfit
 
- Pre-preliminery Results: For now I have only run a logistic regression to predict the isProfit using the candles for 
-my 303,248 data points and obtained an accuracy of %83. However, the precisiona nd recall of my model is very low since 
-I have not even optimized my baby model yet. I will add a few more variables to my data and and employ Neural Network 
-analysis in the next couple of days. 
+ Pre-preliminery Results: 
+
+			Acc.	Pres.	Recall
+		Logit	0.521	0.528	0.756
+	Random Forest	0.513	0.526	0.764
+		NN 	0.516	0.530	0.674
+
 
