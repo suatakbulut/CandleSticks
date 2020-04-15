@@ -14,7 +14,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 print("---------------------------------------------------------------")
-print("\nAttention: We will be using only the last four days' candle stick formation!..\n")
+print("\nAttention: We will be using only the last four days' candle stick formations!..\n")
 print("---------------------------------------------------------------")
 isScrape   = input("Do you want to skip data scraping? (y / n): ")
 isLabel    = input("Do you want to skip data labeling? (y / n): ")
@@ -25,7 +25,7 @@ isNN       = input("Do you want to skip NN? (y / n): ")
 isMoreData = input("Do you want to skip checking whether the model needs more data or to be replaced? (y / n): ")
 
 # ---------------------------------------------------------------
-#     PART 1: SCRAPE DATA and PREPARE VARIABLES OF INTEREST
+#     PART 1: SCRAPE DATA and CREATE VARIABLES OF INTEREST
 # ---------------------------------------------------------------
 # top 241 stock in SP500 based on their Market Cap
 stocks = [
